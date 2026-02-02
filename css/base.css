@@ -1,0 +1,680 @@
+/* ==== LOGO ==== */
+header .logo img {
+  display: block;
+  max-width: 170px; /* Tamaño máximo del logo */
+  margin: 0 auto -2px auto;/* menos espacio debajo del logo */
+}
+
+/* ==== MENÚ NAV ==== */
+nav {
+  background-color: #ffffff;
+  padding: 0.3%; /* más bajo */
+  margin: 0.3% auto 0.5%; /* menos espacio entre logo y menú */
+  box-shadow: 0 3px 8px  rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  max-width: 70%; /* más angosto horizontalmente */
+}
+
+nav li {
+  white-space: nowrap; /* evita que los elementos del menú se dividan en varias líneas */
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent; /* subrayado inicial transparente */
+}
+
+nav a:hover {
+  color: #000;
+  border-bottom: 2px solid;
+}
+
+/* ==== BOTÓN HAMBURGUESA ====*/
+
+.nav-menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.hamburger-line,
+.hamburger-line::before,
+.hamburger-line::after {
+  display: block;
+  background-color: #000;
+  height: 3px;
+  width: 28px;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hamburger-line::before,
+.hamburger-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.hamburger-line::before {
+  top: -8px;
+}
+
+.hamburger-line::after {
+  top: 8px;
+}
+
+.main-nav.nav-open {
+  display: block;
+}
+
+/* Animación al hacer clic */
+.hamburger-menu.active .hamburger-line {
+  background-color: transparent;
+}
+.hamburger-menu.active .hamburger-line::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+.hamburger-menu.active .hamburger-line::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+
+@media (min-width: 768px) {
+  .main-nav {
+    display: block;
+  }
+
+.hamburger-menu {
+  display: none;
+}
+}
+
+/* En pantallas chicas */
+@media (max-width: 767px) {
+  header {
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    padding: 15px 20px;
+  }
+
+  .main-nav.nav-open {
+    display: block;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+
+/* ==== HEADER ==== */
+header {
+  background-color: #F1F0F0; 
+  padding: 0.3% 0; /* reduce la altura general */
+  text-align: center;
+  box-shadow:  0 3px 8px  rgba(0,0,0,0.1);
+  font-weight: bold;
+}
+  
+/* TEXTO INDEX */
+article {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+article:last-child {
+  border-bottom: none; 
+}
+
+h2 {
+  font-size: 150%; /* Tamaño de fuente para h2 */
+  font-weight: bold;
+  color: #000000; /* los títulos */
+  margin-top: 0;
+  margin-bottom: 1.3%;
+}
+
+h3 {
+  font-size: 100%; /* Tamaño de fuente para h3 */
+  font-weight: bold;
+  color: #000000; /* títulos */
+  margin-top: 0;
+  margin-bottom: 0.7%;
+}
+
+p {
+  margin-bottom: 1.3%;
+  font-size: 95%; /* Tamaño de fuente para párrafos */
+  color: #555; /* Color de texto más suave para párrafos */
+}
+
+a {
+  color: #555; /* Color para enlaces */
+  text-decoration: none;
+}
+
+/* ====== BODY ====== */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  line-height: 1.6;
+  padding: 0 2%;
+  margin: 0;
+}
+
+section {
+  background-color: #ffffff;
+  border-radius: 7px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  max-width: 1200px;
+  padding: 2rem;
+  margin: 2rem auto;
+}
+
+/* FOOTER */
+footer {
+    position: fixed;        /* se queda fijo en la pantalla */
+    bottom: 0;              /* pegado al borde inferior */
+    left: 0;
+    width: 100%;            /* ocupa todo el ancho */
+    text-align: center;     /* texto centrado */
+    padding: 0.83%;
+    
+    background-color: rgba(0, 0, 0, 0.2); 
+    /* negro, se ve como transparente con un toque oscuro */
+    
+    color: #000;  /* texto en negro */
+    font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+  color: #ecf0f1;
+}
+
+
+/* LISTAS */
+.lista-colores {
+  color: black; /* el texto siempre en negro */
+  font-size: 1.78%;
+  line-height: 1.6;
+}
+
+.lista-colores .color {
+  display: inline-block;
+  width: 1.78%;
+  height: 1.78%;
+  border-radius: 50%; /* lo hace redondo */
+  margin-right: 0.67%;
+  vertical-align: middle;
+}
+
+nav ul {
+  list-style: none;         
+  display: flex;            /* lo pone en fila horizontal */
+  justify-content: center;  /* centra el menú */
+  gap: 2.67%;                /* espacio entre links */
+  margin: 0;
+  padding: 0;
+  background: white;     
+}
+
+nav li {
+  display: inline;  /* asegura que no se apilen */
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  padding: 0.5rem;
+  transition: 0.2s;
+}
+
+/* formulario */
+.seccion {
+  padding: 3.56%;
+  background: rgba(188, 148, 154, 0.3); /* rosa claro semitransparente */
+  border-radius: 0.89%;
+  margin: 3.56% auto;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.78%;
+  margin-bottom: 2.67%;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 1.22%;
+  border: 1px solid #ccc;
+  border-radius: 0.56%;
+  font-size: 1rem;
+}
+
+.form-contacto button {
+  background-color: #000;
+  color: #fff;
+  padding: 1.44%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.form-contacto button:hover {
+  background-color: #444;
+}
+
+.redes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.redes li {
+  margin: 0.5rem 0;
+}
+
+.redes a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.redes a:hover {
+  color: #555;
+}
+
+/* Mensajes de error */
+
+.form-contacto .error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-contacto .error-message::before {
+  content: " ⚠ "; 
+}
+
+.form-contacto input.error,
+.form-contacto textarea.error {
+  border-color: red;
+  outline: none;
+}
+
+/* En pantallas muy pequeñas*/
+@media (max-width: 480px) {
+  .form-contacto {
+    gap: 10px;
+  }
+
+  .form-contacto label {
+    font-size: 0.9rem;
+  }
+
+  .form-contacto input,
+  .form-contacto textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .form-contacto button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
+
+
+/* STREET STYLE */
+.imagenes-ciudad {
+  display: flex;
+  justify-content: center;  /* centra las imágenes */
+  margin: 3.33% auto;
+  gap: 40px; /* espacio entre imágenes */
+  flex-wrap: wrap; /* permite que las imágenes bajen a la siguiente línea si no caben */
+  max-width: 900px; 
+}
+
+.imagenes-ciudad img {
+  width: 30%;   
+  border-radius: 2%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  height: auto;
+}
+
+.imagenes-ciudad img:hover {
+  transform: scale(1.05); /* efecto de zoom al pasar el mouse */
+  transition: transform 0.3s ease;
+}
+
+.seccion {
+  padding: 7%;
+  background: rgba(188, 148, 154, 0.3); 
+  border-radius: 7px;
+  margin: 3.56% auto;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.seccion h2 {
+  font-size: 150%;
+  margin-bottom: 2.22%;
+}
+
+.seccion h3 {
+  font-size: 130%;
+  margin-bottom: 1.33%;
+}
+
+.seccion p {
+  font-size: 100%;
+  line-height: 1.5;
+  margin-bottom: 2.22%;
+}
+
+@media (max-width: 768px) {
+ 
+
+  .imagenes-ciudad {
+    flex-direction: column;      
+    align-items: center;         
+    gap: 20px;                    /* menos espacio entre ellas */
+  }
+
+  .imagenes-ciudad img {
+    width: 75%;                   /* cada imagen ocupa más espacio */
+    max-width: 350px;             /* límite de tamaño para que no se agranden demasiado */
+  }
+
+  .seccion {
+    padding: 10%;
+    margin: 5% auto;
+    max-width: 95%;
+  }
+
+  .seccion h2 {
+    font-size: 120%;
+  }
+
+  .seccion h3 {
+    font-size: 110%;
+  }
+
+  .seccion p {
+    font-size: 95%;
+  }
+}
+
+/* IMAGTENES DE INDEX*/
+.imagenes-colores img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 2.22%;    /* espacio entre imágenes */
+  margin: 4.44% 0;
+  max-width: 50%;
+  height: auto;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-size: 1.78%;
+  line-height: 1.5;
+}
+
+.noticia-imagen {
+  display: flex;
+  justify-content: center; /* centra la imagen */
+  margin: 2.22% 0;        /* espacio arriba y abajo */
+}
+
+.noticia-imagen img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.imagen-innovacion img {
+  display: flex;
+  max-width: 50%;
+  height: auto;
+  border-radius: 7px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  /* Imágenes de colores */
+  .imagenes-colores img {
+    max-width: 80%;       /* ocupan más espacio en pantallas medianas */
+    margin: 10px 0;       /* espacio entre ellas */
+  }
+
+  /* Noticia imagen */
+  .noticia-imagen img {
+    max-width: 90%;       /* se ajusta al ancho disponible */
+  }
+
+  /* Imagen innovación */
+  .imagen-innovacion img {
+    max-width: 80%;
+  }
+  .imagenes-acerca {
+    flex-direction: column;       
+    justify-content: center;
+    align-items: center;
+    gap: 15px;                   
+    margin: 3% auto;
+  }
+
+  .imagenes-acerca img {
+    width: 80%;                     
+    max-width: 300px;              
+  }
+
+  .seccion-acerca p {
+    width: 90%;
+    margin: 0 auto 15px auto;
+    font-size: 95%;
+    text-align: center;
+  }
+
+  .seccion-acerca h2 {
+    font-size: 130%;
+  }
+
+  .seccion-acerca h3 {
+    font-size: 115%;
+  }
+
+}
+
+/* ACERCA DE... */
+.imagenes-acerca {
+  display: flex;            
+  flex-direction: row-reverse; 
+  justify-content: center;   
+  align-items: center;      
+  gap: 3%;                   
+  padding: 0%;
+  margin: 2%;
+}
+
+.imagenes-acerca img {
+  width: 40%;             
+  height: auto;           
+  box-shadow:0 4px 6px rgba(0,0,0,0.1); 
+  border-radius: 1%;
+}
+
+.seccion-acerca h2 {
+  font-size: 150%;
+  margin-bottom: 2.22%;
+}
+
+.seccion-acerca h3 {
+  font-size: 130%;
+  margin-bottom: 1.33%;
+}
+
+.seccion-acerca p {
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+
+
+@media (max-width: 480px) {
+  .imagenes-acerca img {
+    width: 100%;                  
+    max-width: none;
+  }
+
+  .seccion-acerca p {
+    font-size: 90%;
+  }
+
+  .seccion-acerca h2 {
+    font-size: 120%;
+  }
+
+  .seccion-acerca h3 {
+    font-size: 100%;
+  }
+}
+
+/* REFERENCIAS*/
+.seccion-referencias {
+  padding: 5.56% 2.22%;
+  text-align: center;
+  background: #f8f9fa; /* un gris muy suave en lugar del rosa */
+  border-radius: 7px;
+}
+
+.seccion-referencias p{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2%;
+  margin-bottom: 3.33%;
+}
+
+.seccion-referencias ul {
+  background: #fff;
+  padding: 4%;
+  border-radius: 7px;
+  max-width: 700px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+  list-style-type: none;
+  margin: 0 auto;
+}
+
+.seccion-referencias h3 {
+  margin-bottom: 1.11%;
+  font-size: 2.22%;
+  color: #444;
+}
+
+.seccion-referencias a {
+  display: inline-block;
+  margin-top: 1.11%;
+  color: #6b6b6b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.seccion-referencias a:hover {
+  text-decoration: underline;
+  transform: translateY(-0.56%);
+}
+
+.seccion-referencias.nota {
+  margin-top: 2.22%;
+  font-style: italic;
+  color: #666;
+}
+
+.recursos li {
+  margin-bottom: 2%;
+}
+
+.seccion-referencias h2 {
+  font-size: 150%;
+  color: #333;
+  margin-bottom: 1.11%;
+}
+
+@media (max-width: 768px) {
+    .seccion-referencias {
+      padding: 8% 5%;
+    }
+  
+    .seccion-referencias p {
+      display: block;         
+      text-align: center;
+      margin-bottom: 2em;
+    }
+  
+    .seccion-referencias ul {
+      max-width: 90%;         
+      padding: 5%;
+    }
+  
+    .recursos li {
+      margin-bottom: 1.5em;   
+    }
+  
+    .seccion-referencias h2 {
+      font-size: 130%;          
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .seccion-referencias {
+      padding: 10% 5%;
+    }
+  
+    .seccion-referencias h2 {
+      font-size: 120%;
+    }
+  
+    .seccion-referencias p {
+      font-size: 90%;
+    }
+  
+    .seccion-referencias ul {
+      padding: 4%;
+    }
+  
+    .recursos li {
+      font-size: 90%;
+      margin-bottom: 1em;
+    }
+  }
+  
